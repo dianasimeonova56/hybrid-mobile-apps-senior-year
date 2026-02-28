@@ -113,3 +113,121 @@ document.querySelector('#zad9').addEventListener('click', () => {
 
     alert(formula);
 })
+
+// Zadacha 10
+document.querySelector('#zad10').addEventListener('click', () => {
+    const h = Number(document.querySelector("#zad10Height").value);
+    const r = Number(document.querySelector("#zad10Radius").value);
+
+    calcCone([h, r]);
+})
+
+function calcCone([h, r]) {
+    const volume = (1 / 3) * Math.PI * Math.pow(r, 2) * h;
+    const lateralSurface = Math.PI * r * (Math.sqrt(Math.pow(r, 2) + Math.pow(h, 2)));
+
+    console.log("Volume: ", volume);
+    console.log("Lateral surface: ", lateralSurface);
+}
+
+// Zadacha 11
+document.querySelector('#zad11').addEventListener('click', () => {
+    const n = Number(document.querySelector("#zad11Num").value);
+
+    if (Number.isInteger(n)) {
+        if (n % 2 === 0) {
+            alert("Even!");
+        } else {
+            alert("Odd!");
+        }
+    } else {
+        alert("Invalid! Provide an integer!");
+    }
+})
+
+// Zadacha 12
+document.querySelector('#zad12').addEventListener('click', () => {
+    const n = Number(document.querySelector("#zad12Num").value);
+    let bool = true;
+
+    if (n < 1) {
+        bool = false;
+        return;
+    }
+
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) {
+            bool = false;
+            break;
+        }
+    }
+
+    if (bool) {
+        console.log("Prime!");
+    } else {
+        console.log("Composite!");
+    }
+})
+
+//zadacha  13
+document.querySelector('#zad13').addEventListener('click', () => {
+    let v1 = Number(document.querySelector("#zad13V1").value);
+    let v2 = Number(document.querySelector("#zad13V2").value);
+    const t = Number(document.querySelector("#zad13T").value);
+
+    v1 /= 3.6;
+    v2 /= 3.6;
+
+    const s1 = v1 * t;
+    const s2 = v2 * t;
+
+    console.log(Math.abs(s1 - s2));
+})
+
+//zadacha  14
+document.querySelector('#zad14').addEventListener('click', () => {
+    const input = document.querySelector("#zad14Arr").value.replaceAll("'", "").split(', ');
+    let obj = {}
+    let property = '';
+
+    for (let i = 0; i < input.length; i += 2) {
+        property = input[i];
+        obj[property] = input[i + 1];
+    }
+
+    console.log(obj);
+})
+
+//zadacha 15
+document.querySelector('#zad15').addEventListener('click', () => {
+    const n1 = Number(document.querySelector("#zad15N1").value);
+    const n2 = Number(document.querySelector("#zad15N2").value);
+    const n3 = Number(document.querySelector("#zad15N3").value);
+    let biggestNum = n1;
+
+    if (n2 > biggestNum) {
+        biggestNum = n2;
+    } else if (n3 > biggestNum) {
+        biggestNum = n3;
+    }
+
+    console.log(biggestNum);
+})
+
+//zadacha  14
+document.querySelector('#zad16').addEventListener('click', () => {
+    debugger
+    const regex = /[?!-'"]+/g;
+    const string = document.querySelector("#zad16Str").value.replaceAll(regex, "").split(/[\s,]+/);
+    let toPrint = "";
+
+    string.forEach((str, i) => {
+        if (i == string.length - 1) {
+            toPrint += str.toUpperCase();
+        } else {
+            toPrint += str.toUpperCase() + ', ';
+        }
+    });
+
+    console.log(toPrint);
+})
