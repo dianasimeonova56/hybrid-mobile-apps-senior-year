@@ -214,11 +214,44 @@ document.querySelector('#zad15').addEventListener('click', () => {
     console.log(biggestNum);
 })
 
-//zadacha  14
+//zadacha  16
 document.querySelector('#zad16').addEventListener('click', () => {
+    const num1 = Number(document.querySelector("#zad16n1").value);
+    const num2 = Number(document.querySelector("#zad16n2").value);
+    const operator = document.querySelector("#zad16operator").value;
+    let result;
+ 
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 === 0) {
+                console.log("dont divide by zero >:(");
+                return;
+            }
+            result = num1 / num2;
+            break;
+        default:
+            console.log("invalid operator!");
+            return;
+    }
+ 
+    console.log(result);
+
+})
+
+//zadacha  17
+document.querySelector('#zad17').addEventListener('click', () => {
     debugger
     const regex = /[?!-'"]+/g;
-    const string = document.querySelector("#zad16Str").value.replaceAll(regex, "").split(/[\s,]+/);
+    const string = document.querySelector("#zad17Str").value.replaceAll(regex, "").split(/[\s,]+/);
     let toPrint = "";
 
     string.forEach((str, i) => {
