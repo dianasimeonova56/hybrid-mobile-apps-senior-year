@@ -1,0 +1,14 @@
+{
+  "name": "js-challenges",
+  "version": "1.0.0",
+  "description": "JavaScript challenges for you to solve",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Dr.JJ",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
